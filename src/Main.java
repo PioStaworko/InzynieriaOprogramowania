@@ -1,6 +1,9 @@
 import Model.*;
 import Prezenter.*;
 import WidokObywatela.*;
+
+import java.util.Vector;
+
 public class Main {
     public static void main(String[] args) {
         FasadaModelu fsmodelu = new FasadaModelu();
@@ -12,13 +15,10 @@ public class Main {
         Wniosek w  = fsprezentera.getWniosek(typ_wniosku);
         fswidoku.getWidok(w);
         fsmodelu.WyslijWniosekDoZatwierdzenia(w);
-
-        fsmodelu.getwnioskidozatwierdzenia();
-
-        System.out.println("Wniosek został wysłan do zatwierdzenia");
-        System.out.println(fsmodelu.getwnioskidozatwierdzenia());
-
-
+        Vector<Wniosek> dozatwierdzenia = fsmodelu.getwnioskidozatwierdzenia();
+        for (Wniosek wniosek : dozatwierdzenia) {
+            System.out.println(wniosek.toString());
+        }
+        fsmodelu.WykonajWniosek(w);
     }
-
 }

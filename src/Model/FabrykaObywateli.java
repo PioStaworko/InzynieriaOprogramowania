@@ -7,8 +7,9 @@ public class FabrykaObywateli {
 	 * @param Pesel
 	 */
 	public Obywatel ZnajdzObywatela(String Pesel) {
-		// TODO - implement FabrykaObywateli.ZnajdzObywatela
-		throw new UnsupportedOperationException();
+		AdapterBazyDanych abd = new AdapterBazyDanych();
+		Obywatel obw = abd.OdczytajObywatela(Pesel);
+		return obw;
 	}
 
 	public void StworzNowegoObywatela() {

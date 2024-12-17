@@ -17,13 +17,18 @@ public class Obywatel {
 	private Stan_cywilny Stan_Cywilny;
 	private String Kraj_Urodzenia;
 
+	public Obywatel(String imie,String nazwisko,String pesel){
+		this.Imie = imie;
+		this.Nazwisko = nazwisko;
+		this.Pesel = pesel;
+	}
+
 	public String getKraj_Urodzenia() {
 		return this.Kraj_Urodzenia;
 	}
 
 	public String getImie() {
-		// TODO - implement Obywatel.getImie
-		throw new UnsupportedOperationException();
+		return this.Imie;
 	}
 
 	/**
@@ -36,8 +41,7 @@ public class Obywatel {
 	}
 
 	public String getNazwisko() {
-		// TODO - implement Obywatel.getNazwisko
-		throw new UnsupportedOperationException();
+		return this.Nazwisko;
 	}
 
 	/**
@@ -50,8 +54,7 @@ public class Obywatel {
 	}
 
 	public String getPesel() {
-		// TODO - implement Obywatel.getPesel
-		throw new UnsupportedOperationException();
+		return this.Pesel;
 	}
 
 	/**
@@ -64,8 +67,7 @@ public class Obywatel {
 	}
 
 	public String getData_urodzenia() {
-		// TODO - implement Obywatel.getData_urodzenia
-		throw new UnsupportedOperationException();
+		return this.Data_urodzenia;
 	}
 
 	/**
@@ -78,17 +80,14 @@ public class Obywatel {
 	}
 
 	public String getData_Smierci() {
-		// TODO - implement Obywatel.getData_�mierci
-		throw new UnsupportedOperationException();
+		return this.Data_Smierci;
 	}
-
 	/**
 	 * 
 	 * @param Data_Smierci
 	 */
 	public void setData_Smierci(String Data_Smierci) {
-		// TODO - implement Obywatel.setData_�mierci
-		throw new UnsupportedOperationException();
+		this.Data_Smierci = Data_Smierci;
 	}
 
 	public void getAttribute() {

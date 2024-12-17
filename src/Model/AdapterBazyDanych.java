@@ -1,21 +1,22 @@
 package Model;
 
+import java.util.Vector;
+
 public class AdapterBazyDanych {
 
 	private String DB_URL;
 	private String KluczDostepu;
 	private String OracleSQLHandle;
 	private static AdapterBazyDanych instance;
+	private Vector<Obywatel> obywatele;
 
-	/**
-	 * 
-	 * @param Domain
-	 * @param User
-	 * @param KluczDostepu
-	 */
-	public AdapterBazyDanych(String Domain, String User, String KluczDostepu) {
-		// TODO - implement AdapterBazyDanych.AdapterBazyDanych
-		throw new UnsupportedOperationException();
+
+	public AdapterBazyDanych() {
+		obywatele = new Vector<Obywatel>();
+		obywatele.add(new Obywatel("Pawel", "Kowalski","1"));
+		obywatele.add(new Obywatel("Wanda", "Wandowska","2"));
+		obywatele.add(new Obywatel("Kuba", "Kubowski","123"));
+
 	}
 
 	/**
@@ -50,9 +51,13 @@ public class AdapterBazyDanych {
 	 * 
 	 * @param PESEL
 	 */
-	public void OdczytajObywatela(String PESEL) {
-		// TODO - implement AdapterBazyDanych.OdczytajObywatela
-		throw new UnsupportedOperationException();
+	public Obywatel OdczytajObywatela(String PESEL) {
+		for (Obywatel ob : obywatele) {
+			if (ob.getPesel().equals(PESEL)) {
+				return ob;
+			}
+		}
+		return null;
 	}
 
 	public void getAttribute() {

@@ -38,6 +38,21 @@ public class FasadaModelu implements Dostepdomodelu {
 		throw new UnsupportedOperationException();
 	}
 
+	public void WykonajWniosek(Wniosek wniosek) {
+		if (wniosek.getClass() == WniosekONarodzinyorSmierc.class){
+			AdapterBazyDanych adapter = new AdapterBazyDanych();
+			Obywatel obw = adapter.OdczytajObywatela(wniosek.getkey("pesel"));
+			obw.setData_Smierci(wniosek.getkey("datasmierci"));
+			System.out.println("Zmieniono dane obywatela");
+			System.out.println("Pesel: " + obw.getPesel());
+			System.out.println("Imie: " + obw.getImie());
+			System.out.println("Nazwisko: " + obw.getNazwisko());
+			System.out.println("Data śmierci: " + obw.getData_Smierci());
+		}
+		else {
+			throw new UnsupportedOperationException();
+		}
+	}
 	public Vector<Wniosek> getwnioskidozatwierdzenia() {
 		return kolejka.GetWnioski();
 
