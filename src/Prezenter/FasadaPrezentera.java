@@ -18,6 +18,7 @@ public class FasadaPrezentera {
 	 * @param wniosek
 	 */
 	public boolean WyslijWniosek(Wniosek wniosek) {
+		// TODO - implement FasadaPrezentera.WyslijWniosek
 		throw new UnsupportedOperationException();
 	}
 

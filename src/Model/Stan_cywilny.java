@@ -5,7 +5,7 @@ public enum Stan_cywilny {
 
 	private int PANNA;
 	private int KAWALER;
-	private int ZAMʯNA;
+	private int ZAMEZNA;
 	private int ZONATY;
 	private int ROZWIEDZIONA;
 	private int ROZWIEDZONY;

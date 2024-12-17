@@ -1,6 +1,7 @@
 package Model;
 
 public enum Plec {
-	MEZCZYZNA,
-	KOBIETA
+	;
+	String MEZCZYZNA;
+	String KOBIETA;
 }

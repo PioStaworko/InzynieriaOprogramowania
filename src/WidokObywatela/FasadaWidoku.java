@@ -2,7 +2,7 @@ package WidokObywatela;
 
 import Prezenter.*;
 
-public class FasadaWidoku implements FasadaWidokuInterface {
+public class FasadaWidoku  {
 
 	/**
 	 * 

@@ -1,7 +1,6 @@
 package Model;
 
 import Prezenter.*;
-import Model.*;
 
 public class FasadaModelu implements Dostepdomodelu {
 
@@ -25,7 +24,6 @@ public class FasadaModelu implements Dostepdomodelu {
 	 */
 	public void Wyslijwniosekdozatwierdzenia(Wniosek Wniosek) {
 		// TODO - implement FasadaModelu.Wyslijwniosekdozatwierdzenia
-		System.out.println("Wysłano wniosek do zatwierdzenia");
 		throw new UnsupportedOperationException();
 	}
 

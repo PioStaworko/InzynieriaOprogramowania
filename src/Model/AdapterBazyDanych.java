@@ -14,7 +14,8 @@ public class AdapterBazyDanych {
 	 * @param KluczDostepu
 	 */
 	public AdapterBazyDanych(String Domain, String User, String KluczDostepu) {
-
+		// TODO - implement AdapterBazyDanych.AdapterBazyDanych
+		throw new UnsupportedOperationException();
 	}
 
 	/**
