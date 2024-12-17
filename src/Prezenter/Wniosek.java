@@ -5,6 +5,9 @@ public abstract class Wniosek {
 
 	private HashMap<String,String> data;
 
+	public Wniosek() {
+		data = new HashMap<String,String>();
+	}
 	/**
 	 * 
 	 * @param key
@@ -26,4 +29,10 @@ public abstract class Wniosek {
 		return data.keySet().toArray(new String[0]);
 	}
 
+	@Override
+	public String toString() {
+		return "Wniosek{" +
+				"data=" + data +
+				'}';
+	}
 }
