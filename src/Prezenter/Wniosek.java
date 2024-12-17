@@ -1,8 +1,9 @@
 package Prezenter;
+import java.util.HashMap;
 
 public abstract class Wniosek {
 
-	private String[] widok;
+	private HashMap<String,String> data;
 
 	/**
 	 * 
@@ -10,7 +11,7 @@ public abstract class Wniosek {
 	 * @param value
 	 */
 	public void setkey(String key, String value) {
-
+		data.put(key, value);
 	}
 
 	/**
@@ -18,11 +19,11 @@ public abstract class Wniosek {
 	 * @param key
 	 */
 	public String getkey(String key) {
-		throw new UnsupportedOperationException();
+		return data.get(key);
 	}
 
 	public String[] getkeys() {
-		throw new UnsupportedOperationException();
+		return data.keySet().toArray(new String[0]);
 	}
 
 }
