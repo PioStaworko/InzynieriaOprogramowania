@@ -15,7 +15,7 @@ public class Main {
 
         fsmodelu.getwnioskidozatwierdzenia();
 
-        System.out.println("Wniosek został wysłany do zatwierdzenia");
+        System.out.println("Wniosek został wysłan do zatwierdzenia");
         System.out.println(fsmodelu.getwnioskidozatwierdzenia());
 
 
