@@ -26,6 +26,10 @@ public class FabrykaWnioskow {
 			wk.setkey("imie", "");
 			wk.setkey("nazwisko", "");
 			return wk;
+		}else if(TypWniosku.equals("wniosekowniosek")){
+			WniosekOwyborWniosku wk = new WniosekOwyborWniosku();
+			wk.setkey("typwniosku", "");
+			return wk;
 		}
 		return null;
 	}

@@ -16,6 +16,7 @@ public class FasadaPrezentera {
 		throw new UnsupportedOperationException();
 	}
 	public String getWyborWniosku(int wybor){
+
 		switch (wybor){
 			case 1:
 				return "narodzinysmierc";
