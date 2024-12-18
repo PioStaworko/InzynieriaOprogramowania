@@ -36,8 +36,7 @@ public class Obywatel {
 	 * @param Imie
 	 */
 	public void setImie(String Imie) {
-		// TODO - implement Obywatel.setImie
-		throw new UnsupportedOperationException();
+		this.Imie = Imie;
 	}
 
 	public String getNazwisko() {

@@ -10,7 +10,7 @@ public class FasadaModelu implements Dostepdomodelu {
 
 	public FasadaModelu() {
 		kolejka = new KolejkaWnioskow();
-		zatwierdzone = new KolejkaWnioskow()
+		zatwierdzone = new KolejkaWnioskow();
 	}
 	public Wniosek[] GetWnioskiDoZatwierdzenia() {
 		// TODO - implement FasadaModelu.GetWnioskiDoZatwierdzenia
@@ -56,7 +56,8 @@ public class FasadaModelu implements Dostepdomodelu {
 			obw.setImie(wniosek.getkey("imie"));
 			System.out.println("Zmieniono dane obywatela");
 			System.out.println("Imie: " + obw.getImie());
-		}{
+		}
+		else {
 			throw new UnsupportedOperationException();
 		}
 	}

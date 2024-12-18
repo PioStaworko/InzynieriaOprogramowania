@@ -27,7 +27,7 @@ public class FabrykaWnioskow {
 			wk.setkey("nazwisko", "");
 			return wk;
 		}
-
+		return null;
 	}
 	public WniosekOKopieDanych GetWniosekOKopieDanych() {
 		// TODO - implement FabrykaWnioskow.GetWniosekOKopieDanych

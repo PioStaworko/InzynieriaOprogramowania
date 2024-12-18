@@ -12,26 +12,21 @@ public class FasadaPrezentera {
 	 * 
 	 * @param TypWniosku
 	 */
-	public Wniosek getWidok(String TypWniosku) {
+	public Wniosek getWidok(int TypWniosku) {
 		throw new UnsupportedOperationException();
 	}
 	public String getWyborWniosku(int wybor){
 		switch (wybor){
 			case 1:
 				return "narodzinysmierc";
-				break;
 			case 2:
 				return "aktualizacja";
-				break;
 			case 3:
 				return "kopiadanych";
-				break;
 			case 4:
 				return "certyfikat";
-				break;
 			default:
-				throw UnsupportedOperationException();
-				break;
+				throw new UnsupportedOperationException();
 		}
 	}
 	public Wniosek getWniosek(String typwniosku){

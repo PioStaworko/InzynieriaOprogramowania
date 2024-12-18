@@ -23,12 +23,10 @@ public class Main {
 
         typ_wniosku = fsprezentera.getWyborWniosku(2);
         Wniosek w2 = fsprezentera.getWniosek(typ_wniosku);
-        fswidoku.getWidok(w);
+        fswidoku.getWidok(w2);
         fsmodelu.ZatwierdzWniosek(w2);
-        vector<Wniosek> zatwierdzone = fsmodelu.getzatwierdzone();
-        for (Wniosek zatwierdzony : zatwierdzone){
-            fsmodelu.WykonajWniosek(w2);
-        }
+        fsmodelu.WykonajWniosek(w2);
+
 
     }
 }

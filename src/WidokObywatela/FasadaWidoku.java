@@ -22,9 +22,7 @@ public class FasadaWidoku  {
 			String datasmierci = scanner.nextLine();
 			w.setkey("datasmierci", datasmierci);
 			return w;
-		}
-
-		if(w.getClass() == WniosekOAktualizacjeDanych.class){
+		}else if(w.getClass() == WniosekOAktualizacjeDanych.class){
 			System.out.println("Wniosek o aktualizacje danych");
 			System.out.println("Podaj nowe imie");
 			Scanner scanner = new Scanner(System.in);
@@ -35,7 +33,7 @@ public class FasadaWidoku  {
 			w.setkey("pesel", pesel);
 			return w;
 		}
-
+		return null;
 	}
 
 	/**
