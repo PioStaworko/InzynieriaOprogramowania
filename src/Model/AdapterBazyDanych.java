@@ -78,5 +78,14 @@ public class AdapterBazyDanych {
 		// TODO - implement AdapterBazyDanych.getBazaDanych
 		throw new UnsupportedOperationException();
 	}
+	public void StworzKopieDanych() {
+		// TODO - implement AdapterBazyDanych.StworzKopieDanych
+		throw new UnsupportedOperationException();
+	}
+	public void StworzKopieCertyfikatuNarodzinSmierci () {
+		// TODO - implement AdapterBazyDanych. StworzKopieCertyfikatuNarodzinSmierci
+		throw new UnsupportedOperationException();
+	}
+
 
 }

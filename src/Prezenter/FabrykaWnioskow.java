@@ -16,5 +16,24 @@ public class FabrykaWnioskow {
 			throw new UnsupportedOperationException();
 		}
 	}
+	public WniosekOKopieDanych GetWniosekOKopieDanych() {
+		// TODO - implement FabrykaWnioskow.GetWniosekOKopieDanych
+		throw new UnsupportedOperationException();
+	}
+
+	public WniosekONarodzinyorSmierc GetWniosekONarodzinyorSmierc() {
+		// TODO - implement FabrykaWnioskow.GetWniosekONarodzinyorSmierc
+		throw new UnsupportedOperationException();
+	}
+
+	public WniosekOwyborWniosku GetWniosekOAktualizacjeDancyh() {
+		// TODO - implement FabrykaWnioskow.GetWniosekOAktualizacjeDancyh
+		throw new UnsupportedOperationException();
+	}
+
+	public void GetWniosekOWybor() {
+		// TODO - implement FabrykaWnioskow.GetWniosekOWybor
+		throw new UnsupportedOperationException();
+	}
 
 }
