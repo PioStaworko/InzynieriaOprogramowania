@@ -15,8 +15,24 @@ public class FasadaPrezentera {
 	public Wniosek getWidok(String TypWniosku) {
 		throw new UnsupportedOperationException();
 	}
-	public String getWyborWniosku(){
-		return "narodzinysmierc";
+	public String getWyborWniosku(int wybor){
+		switch (wybor){
+			case 1:
+				return "narodzinysmierc";
+				break;
+			case 2:
+				return "aktualizacja";
+				break;
+			case 3:
+				return "kopiadanych";
+				break;
+			case 4:
+				return "certyfikat";
+				break;
+			default:
+				throw UnsupportedOperationException();
+				break;
+		}
 	}
 	public Wniosek getWniosek(String typwniosku){
 		return fabryka_wnioskow.StworzWniosek(typwniosku);

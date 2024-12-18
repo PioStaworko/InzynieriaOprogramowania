@@ -50,7 +50,13 @@ public class FasadaModelu implements Dostepdomodelu {
 			System.out.println("Nazwisko: " + obw.getNazwisko());
 			System.out.println("Data śmierci: " + obw.getData_Smierci());
 		}
-		else {
+		else if(wniosek.getClass() == WniosekOAktualizacjeDanych.class){
+			AdapterBazyDanych adapter = new AdapterBazyDanych();
+			Obywatel obw = adapter.OdczytajObywatela(wniosek.getkey("pesel"));
+			obw.setImie(wniosek.getkey("imie"));
+			System.out.println("Zmieniono dane obywatela");
+			System.out.println("Imie: " + obw.getImie());
+		}{
 			throw new UnsupportedOperationException();
 		}
 	}
@@ -70,7 +76,7 @@ public class FasadaModelu implements Dostepdomodelu {
 
 	public void NowyWniosekObywatela(){
 		FasadaPrezentera fs = new FasadaPrezentera();
-		String typ_wniosku = fs.getWyborWniosku();
+		String typ_wniosku = fs.getWyborWniosku(1);
 		fs.przekazWniosek(typ_wniosku);
 
 	}

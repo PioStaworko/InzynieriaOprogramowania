@@ -9,12 +9,25 @@ public class FabrykaWnioskow {
 	public Wniosek StworzWniosek(String TypWniosku) {
 		if (TypWniosku.equals("narodzinysmierc")) {
 			WniosekONarodzinyorSmierc wk = new WniosekONarodzinyorSmierc();
-			wk.setkey("pesel","");
-			wk.setkey("datasmierci","");
+			wk.setkey("pesel", "");
+			wk.setkey("datasmierci", "");
 			return wk;
-		} else {
-			throw new UnsupportedOperationException();
+		} else if (TypWniosku.equals("kopiadanych")) {
+			WniosekOKopieDanych wk = new WniosekOKopieDanych();
+			wk.setkey("pesel", "");
+			wk.setkey("dataurodzenia", "");
+			wk.setkey("imie", "");
+			wk.setkey("nazwisko", "");
+			return wk;
+		}else if(TypWniosku.equals("aktualizacja")){
+			WniosekOAktualizacjeDanych wk = new WniosekOAktualizacjeDanych();
+			wk.setkey("pesel", "");
+			wk.setkey("dataurodzenia", "");
+			wk.setkey("imie", "");
+			wk.setkey("nazwisko", "");
+			return wk;
 		}
+
 	}
 	public WniosekOKopieDanych GetWniosekOKopieDanych() {
 		// TODO - implement FabrykaWnioskow.GetWniosekOKopieDanych

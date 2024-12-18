@@ -11,7 +11,7 @@ public class Main {
         FasadaPrezentera fsprezentera = new FasadaPrezentera();
 
 
-        String typ_wniosku = fsprezentera.getWyborWniosku();
+        String typ_wniosku = fsprezentera.getWyborWniosku(1);
         Wniosek w  = fsprezentera.getWniosek(typ_wniosku);
         fswidoku.getWidok(w);
         fsmodelu.WyslijWniosekDoZatwierdzenia(w);
@@ -20,6 +20,15 @@ public class Main {
             System.out.println(wniosek.toString());
         }
         fsmodelu.WykonajWniosek(w);
+
+        typ_wniosku = fsprezentera.getWyborWniosku(2);
+        Wniosek w2 = fsprezentera.getWniosek(typ_wniosku);
+        fswidoku.getWidok(w);
+        fsmodelu.ZatwierdzWniosek(w2);
+        vector<Wniosek> zatwierdzone = fsmodelu.getzatwierdzone();
+        for (Wniosek zatwierdzony : zatwierdzone){
+            fsmodelu.WykonajWniosek(w2);
+        }
 
     }
 }

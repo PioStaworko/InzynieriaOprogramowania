@@ -23,7 +23,19 @@ public class FasadaWidoku  {
 			w.setkey("datasmierci", datasmierci);
 			return w;
 		}
-		throw new UnsupportedOperationException();
+
+		if(w.getClass() == WniosekOAktualizacjeDanych.class){
+			System.out.println("Wniosek o aktualizacje danych");
+			System.out.println("Podaj nowe imie");
+			Scanner scanner = new Scanner(System.in);
+			String noweImie = scanner.nextLine();
+			w.setkey("imie", noweImie);
+			System.out.println("Podaj swoj pesel");
+			String pesel = scanner.nextLine();
+			w.setkey("pesel", pesel);
+			return w;
+		}
+
 	}
 
 	/**
