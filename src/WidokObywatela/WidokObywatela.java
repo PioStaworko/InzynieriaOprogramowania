@@ -31,6 +31,31 @@ public class WidokObywatela {
 			w.setkey("pesel", pesel);
 			return w;
 		}
+		else if(w.getClass()==WniosekOwyborWniosku.class){
+			System.out.println("Wybierz typ wniosku");
+			System.out.println("1. Wniosek o narodziny lub śmierć");
+			System.out.println("2. Wniosek o aktualizacje danych");
+			System.out.println("3. Wniosek o kopie danych");
+			Scanner scanner = new Scanner(System.in);
+			int wybor = scanner.nextInt();
+			if(wybor == 1){
+				w.setkey("typwniosku", "narodzinysmierc");
+			}else if(wybor == 2) {
+				w.setkey("typwniosku", "aktualizacja");
+			}else if(wybor == 3){
+				w.setkey("typwniosku", "kopiadanych");
+			} else{
+				throw new UnsupportedOperationException();
+			}
+			return w;
+		} else if (w.getClass() == WniosekOKopieDanych.class) {
+			System.out.println("Wniosek o kopie danych");
+			System.out.println("Podaj pesel");
+			Scanner scanner = new Scanner(System.in);
+			String pesel = scanner.nextLine();
+			w.setkey("pesel", pesel);
+
+		}
 		return null;
 	}
 

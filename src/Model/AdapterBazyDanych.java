@@ -11,12 +11,19 @@ public class AdapterBazyDanych {
 	private Vector<Obywatel> obywatele;
 
 
-	public AdapterBazyDanych() {
+	private AdapterBazyDanych() {
 		obywatele = new Vector<Obywatel>();
 		obywatele.add(new Obywatel("Pawel", "Kowalski","1"));
 		obywatele.add(new Obywatel("Wanda", "Wandowska","2"));
 		obywatele.add(new Obywatel("Kuba", "Kubowski","123"));
 
+	}
+
+	public static AdapterBazyDanych getInstance() {
+		if (instance == null) {
+			instance = new AdapterBazyDanych();
+		}
+		return instance;
 	}
 
 	/**
@@ -43,8 +50,14 @@ public class AdapterBazyDanych {
 	 * @param ObywatelZmodyfikowany
 	 */
 	public void ModyfikujObywatela(String PESEL, Obywatel ObywatelZmodyfikowany) {
-		// TODO - implement AdapterBazyDanych.ModyfikujObywatela
-		throw new UnsupportedOperationException();
+		for (Obywatel ob : obywatele) {
+			if (ob.getPesel().equals(PESEL)) {
+				ob.setImie(ObywatelZmodyfikowany.getImie());
+				ob.setNazwisko(ObywatelZmodyfikowany.getNazwisko());
+				ob.setData_urodzenia(ObywatelZmodyfikowany.getData_urodzenia());
+				ob.setData_Smierci(ObywatelZmodyfikowany.getData_Smierci());
+			}
+		}
 	}
 
 	/**

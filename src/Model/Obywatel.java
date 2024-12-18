@@ -48,8 +48,7 @@ public class Obywatel {
 	 * @param Nazwisko
 	 */
 	public void setNazwisko(String Nazwisko) {
-		// TODO - implement Obywatel.setNazwisko
-		throw new UnsupportedOperationException();
+		this.Nazwisko = Nazwisko;
 	}
 
 	public String getPesel() {
@@ -74,8 +73,7 @@ public class Obywatel {
 	 * @param Data_urodzenia
 	 */
 	public void setData_urodzenia(String Data_urodzenia) {
-		// TODO - implement Obywatel.setData_urodzenia
-		throw new UnsupportedOperationException();
+		this.Data_urodzenia = Data_urodzenia;
 	}
 
 	public String getData_Smierci() {

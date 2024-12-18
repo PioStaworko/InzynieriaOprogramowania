@@ -10,23 +10,16 @@ public class Main {
         FasadaWidoku fswidoku = new FasadaWidoku();
         FasadaPrezentera fsprezentera = new FasadaPrezentera();
 
+        while (true){
+            Wniosek wyborwniosku = fsprezentera.getWniosek("wniosekowniosek");
+            fswidoku.getWidok(wyborwniosku);
 
-        String typ_wniosku = fsprezentera.getWyborWniosku(1);
-        Wniosek w  = fsprezentera.getWniosek(typ_wniosku);
-        fswidoku.getWidok(w);
-        fsmodelu.WyslijWniosekDoZatwierdzenia(w);
-        Vector<Wniosek> dozatwierdzenia = fsmodelu.getwnioskidozatwierdzenia();
-        for (Wniosek wniosek : dozatwierdzenia) {
-            System.out.println(wniosek.toString());
+            String typ_wniosku = wyborwniosku.getkey("typwniosku");
+            Wniosek w  = fsprezentera.getWniosek(typ_wniosku);
+            fswidoku.getWidok(w);
+            fsmodelu.WyslijWniosekDoZatwierdzenia(w);
+            fsmodelu.WykonajWniosek(w);
         }
-        fsmodelu.WykonajWniosek(w);
-
-        typ_wniosku = fsprezentera.getWyborWniosku(2);
-        Wniosek w2 = fsprezentera.getWniosek(typ_wniosku);
-        fswidoku.getWidok(w2);
-        fsmodelu.ZatwierdzWniosek(w2);
-        fsmodelu.WykonajWniosek(w2);
-
 
     }
 }

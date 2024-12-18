@@ -41,9 +41,10 @@ public class FasadaModelu implements Dostepdomodelu {
 
 	public void WykonajWniosek(Wniosek wniosek) {
 		if (wniosek.getClass() == WniosekONarodzinyorSmierc.class){
-			AdapterBazyDanych adapter = new AdapterBazyDanych();
+			AdapterBazyDanych adapter = AdapterBazyDanych.getInstance();
 			Obywatel obw = adapter.OdczytajObywatela(wniosek.getkey("pesel"));
 			obw.setData_Smierci(wniosek.getkey("datasmierci"));
+			adapter.ModyfikujObywatela(wniosek.getkey("pesel"), obw);
 			System.out.println("Zmieniono dane obywatela");
 			System.out.println("Pesel: " + obw.getPesel());
 			System.out.println("Imie: " + obw.getImie());
@@ -51,11 +52,23 @@ public class FasadaModelu implements Dostepdomodelu {
 			System.out.println("Data śmierci: " + obw.getData_Smierci());
 		}
 		else if(wniosek.getClass() == WniosekOAktualizacjeDanych.class){
-			AdapterBazyDanych adapter = new AdapterBazyDanych();
+			AdapterBazyDanych adapter = AdapterBazyDanych.getInstance();
 			Obywatel obw = adapter.OdczytajObywatela(wniosek.getkey("pesel"));
 			obw.setImie(wniosek.getkey("imie"));
 			System.out.println("Zmieniono dane obywatela");
 			System.out.println("Imie: " + obw.getImie());
+		}else if(wniosek.getClass() == WniosekOKopieDanych.class){
+			AdapterBazyDanych adapter = AdapterBazyDanych.getInstance();
+			Obywatel obw = adapter.OdczytajObywatela(wniosek.getkey("pesel"));
+			System.out.println("Kopia danych obywatela");
+			System.out.println("Pesel: " + obw.getPesel());
+			System.out.println("Imie: " + obw.getImie());
+			System.out.println("Nazwisko: " + obw.getNazwisko());
+			if(obw.getData_Smierci() != null){
+				System.out.println("Data śmierci: " + obw.getData_Smierci());
+			}else{
+				System.out.println("Obywatel JESZCZE żyje");
+			}
 		}
 		else {
 			throw new UnsupportedOperationException();

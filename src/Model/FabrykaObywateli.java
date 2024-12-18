@@ -7,7 +7,7 @@ public class FabrykaObywateli {
 	 * @param Pesel
 	 */
 	public Obywatel ZnajdzObywatela(String Pesel) {
-		AdapterBazyDanych abd = new AdapterBazyDanych();
+		AdapterBazyDanych abd = AdapterBazyDanych.getInstance();
 		Obywatel obw = abd.OdczytajObywatela(Pesel);
 		return obw;
 	}
