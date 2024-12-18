@@ -20,5 +20,6 @@ public class Main {
             System.out.println(wniosek.toString());
         }
         fsmodelu.WykonajWniosek(w);
+
     }
 }

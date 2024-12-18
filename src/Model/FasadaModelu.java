@@ -6,9 +6,11 @@ import java.util.Vector;
 
 public class FasadaModelu implements Dostepdomodelu {
 	KolejkaWnioskow kolejka;
+	KolejkaWnioskow zatwierdzone;
 
 	public FasadaModelu() {
 		kolejka = new KolejkaWnioskow();
+		zatwierdzone = new KolejkaWnioskow()
 	}
 	public Wniosek[] GetWnioskiDoZatwierdzenia() {
 		// TODO - implement FasadaModelu.GetWnioskiDoZatwierdzenia
@@ -25,8 +27,7 @@ public class FasadaModelu implements Dostepdomodelu {
 	 * @param wniosek
 	 */
 	public void ZatwierdzWniosek(Wniosek wniosek) {
-		// TODO - implement FasadaModelu.ZatwierdzWniosek
-		throw new UnsupportedOperationException();
+		zatwierdzone.DodajWniosek(wniosek);
 	}
 
 	/**
@@ -56,6 +57,10 @@ public class FasadaModelu implements Dostepdomodelu {
 	public Vector<Wniosek> getwnioskidozatwierdzenia() {
 		return kolejka.GetWnioski();
 
+	}
+
+	public Vector<Wniosek> getzatwierdzone(){
+		return zatwierdzone.GetWnioski();
 	}
 
 	@Override
