@@ -4,53 +4,35 @@ public class FabrykaWnioskow {
 
 	/**
 	 * 
-	 * @param TypWniosku
+	 * @param TypWniosku jaki wniosek chcemy stworzyc
 	 */
-	public Wniosek StworzWniosek(String TypWniosku) {
-		if (TypWniosku.equals("narodzinysmierc")) {
-			WniosekONarodzinyorSmierc wk = new WniosekONarodzinyorSmierc();
-			wk.setkey("pesel", "");
-			wk.setkey("datasmierci", "");
-			return wk;
-		} else if (TypWniosku.equals("kopiadanych")) {
-			WniosekOKopieDanych wk = new WniosekOKopieDanych();
-			wk.setkey("pesel", "");
-			wk.setkey("dataurodzenia", "");
-			wk.setkey("imie", "");
-			wk.setkey("nazwisko", "");
-			return wk;
-		}else if(TypWniosku.equals("aktualizacja")){
-			WniosekOAktualizacjeDanych wk = new WniosekOAktualizacjeDanych();
-			wk.setkey("pesel", "");
-			wk.setkey("dataurodzenia", "");
-			wk.setkey("imie", "");
-			wk.setkey("nazwisko", "");
-			return wk;
-		}else if(TypWniosku.equals("wniosekowniosek")){
-			WniosekOwyborWniosku wk = new WniosekOwyborWniosku();
-			wk.setkey("typwniosku", "");
-			return wk;
+	public Wniosek StworzWniosek(TypWniosku TypWniosku) {
+		switch (TypWniosku){
+			case AKTUALIZACJA_DANCYH:{
+				WniosekOAktualizacjeDanych wk = new WniosekOAktualizacjeDanych();
+				wk.setkey("pesel", "");
+				wk.setkey("dataurodzenia", "");
+				wk.setkey("imie", "");
+				wk.setkey("nazwisko", "");
+				return wk;
+			}
+			case KOPIA_DANYCH:
+			{
+				WniosekOKopieDanych wk = new WniosekOKopieDanych();
+				wk.setkey("pesel", "");
+				return wk;
+			}
+			case NARODZINY:{
+				throw new UnsupportedOperationException();
+			}
+			case ZGON:{
+				WniosekOSmierc wk = new WniosekOSmierc();
+				wk.setkey("pesel", "");
+				wk.setkey("datasmierci", "");
+				return wk;
+			}
+			default:
+				throw new UnsupportedOperationException();
 		}
-		return null;
 	}
-	public WniosekOKopieDanych GetWniosekOKopieDanych() {
-		// TODO - implement FabrykaWnioskow.GetWniosekOKopieDanych
-		throw new UnsupportedOperationException();
-	}
-
-	public WniosekONarodzinyorSmierc GetWniosekONarodzinyorSmierc() {
-		// TODO - implement FabrykaWnioskow.GetWniosekONarodzinyorSmierc
-		throw new UnsupportedOperationException();
-	}
-
-	public WniosekOwyborWniosku GetWniosekOAktualizacjeDancyh() {
-		// TODO - implement FabrykaWnioskow.GetWniosekOAktualizacjeDancyh
-		throw new UnsupportedOperationException();
-	}
-
-	public void GetWniosekOWybor() {
-		// TODO - implement FabrykaWnioskow.GetWniosekOWybor
-		throw new UnsupportedOperationException();
-	}
-
 }
