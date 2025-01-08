@@ -27,12 +27,16 @@ public class Prezenter {
                 widok.WyswietlKomunikat("Nie ma takiego numeru wniosku. Wybierz ponownie.");
             }
         }
-        return switch (wybor) {
-            case 1 -> TypWniosku.AKTUALIZACJA_DANCYH;
-            case 2 -> TypWniosku.ZGON;
-            case 3 -> TypWniosku.KOPIA_DANYCH;
-            default -> throw new UnsupportedOperationException();
-        };
+        switch (wybor) {
+            case 1:
+                return TypWniosku.AKTUALIZACJA_DANCYH;
+            case 2:
+                return TypWniosku.ZGON;
+            case 3:
+                return TypWniosku.KOPIA_DANYCH;
+            default:
+                throw new UnsupportedOperationException();
+        }
     }
 
 
