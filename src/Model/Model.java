@@ -39,7 +39,7 @@ public class Model implements InterfejsModelu {
      */
     @Override
     public Obywatel ZnajdzObywatela(String pesel) {
-        AdapterBazyDanych abd = AdapterBazyDanych.getInstance();
-        return abd.OdczytajObywatela(pesel);
+        FabrykaObywateli fo = new FabrykaObywateli();
+        return fo.ZnajdzObywatela(pesel);
     }
 }
