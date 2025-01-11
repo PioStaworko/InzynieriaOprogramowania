@@ -20,10 +20,11 @@ public class Prezenter {
         widok.WyswietlKomunikat("1. Aktualizacja danych");
         widok.WyswietlKomunikat("2. Śmierć Obywatela");
         widok.WyswietlKomunikat("3. Kopia danych");
+        widok.WyswietlKomunikat("4. Wykonaj akcje urzędnika");
         int wybor = -1;
-        while (wybor < 1 || wybor > 3) {
+        while (wybor < 1 || wybor > 4) {
             wybor = Integer.parseInt(widok.PobierzDaneZKonsoli("Wybierz numer wniosku: "));
-            if (wybor < 1 || wybor > 3) {
+            if (wybor < 1 || wybor > 4) {
                 widok.WyswietlKomunikat("Nie ma takiego numeru wniosku. Wybierz ponownie.");
             }
         }
@@ -34,6 +35,13 @@ public class Prezenter {
                 return TypWniosku.ZGON;
             case 3:
                 return TypWniosku.KOPIA_DANYCH;
+            case 4:
+                if(model.WykonajPierwszyWniosekWKolejce()){
+                    widok.WyswietlKomunikat("Poprawnie wykonano wniosek");
+                }else {
+                    widok.WyswietlKomunikat("Wniosek niewykonany albo kolejka pusta");
+                }
+                return null;
             default:
                 throw new UnsupportedOperationException();
         }
@@ -42,6 +50,9 @@ public class Prezenter {
 
     public boolean WykonajWniosekObywatela() {
         TypWniosku typwniosku = DajObywatelowiWyborWniosku();
+        if (typwniosku == null){
+            return true;
+        }
         Wniosek wniosek = fabrykaWnioskow.StworzWniosek(typwniosku);
         widok.WyswietlFormularz(wniosek);
         switch (typwniosku) {
@@ -53,18 +64,11 @@ public class Prezenter {
                 }
                 widok.WyswietlObywatela(znobyw);
             }
-            case ZGON -> {
-                if (model.WykonajWniosek(wniosek)) {
-                    widok.WyswietlKomunikat("Poprawnie zabito obywatela.");
+            default -> {
+                if (model.DodajWniosekDoKolejki(wniosek)) {
+                    widok.WyswietlKomunikat("Poprawnie dodano do kolejki wnioskow");
                 } else {
-                    widok.WyswietlKomunikat("Błąd obywatel nieodnaleziony");
-                }
-            }
-            case AKTUALIZACJA_DANCYH -> {
-                if (model.WykonajWniosek(wniosek)) {
-                    widok.WyswietlKomunikat("Poprawnie zaktualizowano dane obywatela.");
-                } else {
-                    widok.WyswietlKomunikat("Błąd obywatel nieodnaleziony");
+                    widok.WyswietlKomunikat("Błąd przy dodawaniu do kolejki");
                 }
             }
         }

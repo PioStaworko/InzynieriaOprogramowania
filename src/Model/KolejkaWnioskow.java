@@ -16,6 +16,16 @@ public class KolejkaWnioskow {
 		Wnioski.add(Wniosek);
 	}
 
+	public Wniosek grabFirstWniosek() {
+		Wniosek w = Wnioski.firstElement();
+		Wnioski.removeFirst();
+		return w;
+	}
+
+	public boolean is_queue_empty() {
+		return Wnioski.isEmpty();
+	}
+
 	public Vector<Wniosek> GetWnioski() {
 		return Wnioski;
 	}

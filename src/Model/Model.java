@@ -6,8 +6,13 @@ import Prezenter.WniosekOSmierc;
 
 
 public class Model implements InterfejsModelu {
-    @Override
-    public boolean WykonajWniosek(Wniosek w) {
+    KolejkaWnioskow kolejka;
+
+    public Model() {
+        kolejka = new KolejkaWnioskow();
+    }
+
+    private boolean WykonajWniosek(Wniosek w) {
         if (w instanceof WniosekOSmierc) {
             Obywatel obw = ZnajdzObywatela(w.getkey("pesel"));
             if (obw != null) {
@@ -32,6 +37,14 @@ public class Model implements InterfejsModelu {
         return false;
     }
 
+    public boolean WykonajPierwszyWniosekWKolejce() {
+        if (kolejka.is_queue_empty()) {
+            return false;
+        }
+        Wniosek w = kolejka.grabFirstWniosek();
+        return WykonajWniosek(w);
+    }
+
 
     /**
      * @param pesel pesel obywatela ktorego szukamy
@@ -39,7 +52,13 @@ public class Model implements InterfejsModelu {
      */
     @Override
     public Obywatel ZnajdzObywatela(String pesel) {
-        AdapterBazyDanych abd = AdapterBazyDanych.getInstance();
-        return abd.OdczytajObywatela(pesel);
+        FabrykaObywateli fo = new FabrykaObywateli();
+        return fo.ZnajdzObywatela(pesel);
+    }
+
+    @Override
+    public boolean DodajWniosekDoKolejki(Wniosek w) {
+        kolejka.DodajWniosek(w);
+        return true;
     }
 }
