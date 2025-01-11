@@ -49,6 +49,7 @@ public class Model implements InterfejsModelu {
     /**
      * @param pesel pesel obywatela ktorego szukamy
      * @return Obywatel
+     *
      */
     @Override
     public Obywatel ZnajdzObywatela(String pesel) {
