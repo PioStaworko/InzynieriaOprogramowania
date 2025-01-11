@@ -8,6 +8,7 @@ public class Prezenter {
     private final FabrykaWnioskow fabrykaWnioskow;
     private final InterfejsModelu model;
     private final InterfejsWidoku widok;
+    private boolean zyc = true;
 
     public Prezenter(InterfejsWidoku widok, InterfejsModelu model) {
         fabrykaWnioskow = new FabrykaWnioskow();
@@ -15,15 +16,21 @@ public class Prezenter {
         this.widok = widok;
     }
 
+
     public TypWniosku DajObywatelowiWyborWniosku() {
         widok.WyswietlKomunikat("Wybierz typ wniosku: ");
         widok.WyswietlKomunikat("1. Aktualizacja danych");
         widok.WyswietlKomunikat("2. Śmierć Obywatela");
         widok.WyswietlKomunikat("3. Kopia danych");
         widok.WyswietlKomunikat("4. Wykonaj akcje urzędnika");
+        widok.WyswietlKomunikat("5. Wyjdz");
         int wybor = -1;
         while (wybor < 1 || wybor > 4) {
             wybor = Integer.parseInt(widok.PobierzDaneZKonsoli("Wybierz numer wniosku: "));
+            if (wybor == 5){
+                zyc = false;
+                return null;
+            }
             if (wybor < 1 || wybor > 4) {
                 widok.WyswietlKomunikat("Nie ma takiego numeru wniosku. Wybierz ponownie.");
             }
@@ -77,7 +84,7 @@ public class Prezenter {
 
     public static void main(String[] args) {
         Prezenter p = new Prezenter(new Widok.WidokObywatela(), new Model.Model());
-        while (true) {
+        while (p.zyc) {
             if (!p.WykonajWniosekObywatela()) {
                 break;
             }
