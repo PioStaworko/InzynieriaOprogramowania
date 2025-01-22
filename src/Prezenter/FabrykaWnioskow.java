@@ -4,10 +4,13 @@ public class FabrykaWnioskow {
 
 	/**
 	 * 
-	 * @param TypWniosku jaki wniosek chcemy stworzyc
+	 * @param typwniosku jaki wniosek chcemy stworzyc
 	 */
-	public Wniosek StworzWniosek(TypWniosku TypWniosku) {
-		switch (TypWniosku){
+	public Wniosek StworzWniosek(TypWniosku typwniosku) {
+		if(typwniosku == null) {
+			return null;
+		}
+		switch (typwniosku){
 			case AKTUALIZACJA_DANCYH:{
 				WniosekOAktualizacjeDanych wk = new WniosekOAktualizacjeDanych();
 				wk.setkey("pesel", "");
@@ -32,7 +35,7 @@ public class FabrykaWnioskow {
 				return wk;
 			}
 			default:
-				throw new UnsupportedOperationException();
+				return null;
 		}
 	}
 }

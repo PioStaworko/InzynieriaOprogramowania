@@ -71,25 +71,10 @@ class FabrykaWnioskowTest {
         }
     }
 
-//    @Test
-//    void stworzWniosek() {
-//        FabrykaWnioskow fabrykaWnioskow = new FabrykaWnioskow();
-//        Wniosek wniosek = fabrykaWnioskow.StworzWniosek(TypWniosku.AKTUALIZACJA_DANCYH);
-//        assertEquals(WniosekOAktualizacjeDanych.class, wniosek.getClass());
-//        String[] klucze = {
-//                "Pesel",
-//                "DataUrodzenia",
-//                "Imie",
-//                "Nazwisko"
-//        };
-//        assertEquals("", wniosek.getkey("pesel"));
-//        assertEquals("", wniosek.getkey("dataurodzenia"));
-//        assertEquals("", wniosek.getkey("imie"));
-//        assertEquals("", wniosek.getkey("nazwisko"));
-//        wniosek = fabrykaWnioskow.StworzWniosek(TypWniosku.KOPIA_DANYCH);
-//        assertEquals(WniosekOKopieDanych.class, wniosek.getClass());
-//        wniosek = fabrykaWnioskow.StworzWniosek(TypWniosku.ZGON);
-//        assertEquals(WniosekOSmierc.class, wniosek.getClass());
-//
-//    }
+    @Test
+    void stworzwniosekPrzekazanoNull(){
+        FabrykaWnioskow fb = new FabrykaWnioskow();
+        Wniosek wniosek = fb.StworzWniosek(null);
+        assertNull(wniosek);
+    }
 }
