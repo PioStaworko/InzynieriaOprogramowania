@@ -56,7 +56,7 @@ class ModelTest {
     }
 
     @Test
-    void testWykonajPierwszyWniosekWKolejceWniosekOAktualizacjeDanych() {
+    void testWykonajPierwszyWniosekWKolejceAktualizacjeDanych() {
         Wniosek wniosek = new WniosekOAktualizacjeDanych();
         wniosek.setkey("pesel", "1");
         wniosek.setkey("imie", "Adam");
